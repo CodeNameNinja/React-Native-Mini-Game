@@ -18,8 +18,14 @@ const StartGameScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <PrimaryButton onPress={handleReset}>Reset</PrimaryButton>
-      <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+      <View style={styles.buttonRow}>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={handleReset}>Reset</PrimaryButton>
+        </View>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+        </View>
+      </View>
     </View>
   );
 };
@@ -40,6 +46,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.26,
     // Add elevation for Android.
     elevation: 5,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   // Add styles for the TextInput.
@@ -53,5 +61,16 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#0C1821",
     textAlign: "center",
+  },
+
+  // Add Styles for the button row.
+  buttonRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
+  },
+  buttonContainer: {
+    flex: 1,
+    width: 100,
   },
 });
